@@ -173,7 +173,22 @@ export default function EnquiryForm() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+                  {/* Self-contained responsive form layout */}
+                  <style>{`
+                    .form-row-2col {
+                      display: grid;
+                      grid-template-columns: 1fr 1fr;
+                      gap: 16px;
+                    }
+                    @media (max-width: 520px) {
+                      .form-row-2col {
+                        grid-template-columns: 1fr;
+                        gap: 12px;
+                      }
+                    }
+                  `}</style>
+
+                  <div className="form-row-2col">
                     <div>
                       <label className="eq-label" htmlFor="name">Full Name</label>
                       <input id="name" name="name" type="text" value={form.name} onChange={handleChange} placeholder="Your name" required className="eq-input" />

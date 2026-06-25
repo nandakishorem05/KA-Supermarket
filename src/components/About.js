@@ -93,38 +93,82 @@ export default function About() {
               }} />
             </div>
 
+            {/* Self-contained responsive styles for About stats */}
+            <style>{`
+              .about-stats-container {
+                position: absolute;
+                bottom: -32px;
+                left: 20px;
+                right: 20px;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
+                z-index: 10;
+              }
+              .about-stat-card {
+                background: white;
+                border-radius: 18px;
+                padding: 16px 12px;
+                text-align: center;
+                box-shadow: 0 16px 48px rgba(15,47,29,0.06);
+                border: 1px solid rgba(21,128,61,0.12);
+                transition: transform 0.2s;
+              }
+              .about-stat-num {
+                font-family: 'Playfair Display', serif;
+                font-weight: 900;
+                font-size: clamp(18px, 2.5vw, 26px);
+                color: var(--primary-dark);
+                line-height: 1;
+              }
+              .about-stat-label {
+                font-family: 'Outfit', sans-serif;
+                font-size: 10px;
+                color: var(--text-muted-light);
+                font-weight: 700;
+                margin-top: 4px;
+                text-transform: uppercase;
+                letter-spacing: 1.2px;
+              }
+
+              @media (max-width: 600px) {
+                .about-stats-container {
+                  position: relative;
+                  bottom: 0;
+                  left: 0;
+                  right: 0;
+                  margin: 20px 0 0 0;
+                  gap: 8px;
+                }
+                .about-stat-card {
+                  padding: 10px 6px;
+                  border-radius: 12px;
+                  box-shadow: 0 8px 24px rgba(15,47,29,0.04);
+                }
+                .about-stat-num {
+                  font-size: 17px;
+                }
+                .about-stat-label {
+                  font-size: 8px;
+                  letter-spacing: 0.5px;
+                  margin-top: 2px;
+                }
+              }
+            `}</style>
+
             {/* Floating stat cards */}
-            <div style={{
-              position: 'absolute', bottom: -32, left: 20, right: 20,
-              display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 12,
-            }}>
+            <div className="about-stats-container">
               {[
                 { n: '5+',   l: 'Locations',  icon: '📍' },
                 { n: '10K+', l: 'Families',   icon: '👨‍👩‍👧' },
                 { n: 'Daily',l: 'Fresh Stock', icon: '🌿' },
               ].map((s, i) => (
-                <div key={i} style={{
-                  background: 'white',
-                  borderRadius: 18,
-                  padding: '16px 12px',
-                  textAlign: 'center',
-                  boxShadow: '0 16px 48px rgba(15,47,29,0.06)',
-                  border: '1px solid rgba(21,128,61,0.12)',
-                }}>
+                <div key={i} className="about-stat-card">
                   <div style={{ fontSize: 20, marginBottom: 4 }}>{s.icon}</div>
-                  <div style={{
-                    fontFamily: "'Playfair Display', serif",
-                    fontWeight: 900, fontSize: 'clamp(18px, 2.5vw, 26px)',
-                    color: 'var(--primary-dark)', lineHeight: 1,
-                  }}>
+                  <div className="about-stat-num">
                     {s.n}
                   </div>
-                  <div style={{
-                    fontFamily: "'Outfit', sans-serif",
-                    fontSize: 10, color: 'var(--text-muted-light)',
-                    fontWeight: 700, marginTop: 4,
-                    textTransform: 'uppercase', letterSpacing: 1.2,
-                  }}>
+                  <div className="about-stat-label">
                     {s.l}
                   </div>
                 </div>

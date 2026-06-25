@@ -25,13 +25,13 @@ export default function Hero() {
           right: 0;
           top: 0;
           bottom: 0;
-          width: 55%;
+          width: 62%;
           z-index: 1;
         }
         .hero-bg-overlay {
           position: absolute;
           inset: 0;
-          background: linear-gradient(to right, #ffffff 0%, #ffffff 15%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
+          background: linear-gradient(to right, #ffffff 0%, rgba(255, 255, 255, 0.95) 12%, rgba(255, 255, 255, 0.4) 32%, transparent 62%);
           z-index: 2;
         }
         .hero-container {

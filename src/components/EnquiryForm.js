@@ -21,27 +21,27 @@ export default function EnquiryForm() {
   const isValid = form.name && form.phone && form.branchId && form.message;
 
   const trustItems = [
-    { icon: '⚡', label: 'Instant WhatsApp Connection', sub: 'Your message goes straight to the branch team', color: '#F59E0B' },
-    { icon: '📍', label: 'Branch-Level Support',         sub: 'Talk directly to the team at your nearest store',  color: '#EA580C' },
-    { icon: '🕐', label: 'Quick Response',                sub: 'We reply within minutes during store hours',       color: '#B45309' },
+    { icon: '⚡', label: 'Instant WhatsApp Connection', sub: 'Your message goes straight to the branch team', color: 'var(--primary)' },
+    { icon: '📍', label: 'Branch-Level Support',         sub: 'Talk directly to the team at your nearest store',  color: 'var(--accent)' },
+    { icon: '🕐', label: 'Quick Response',                sub: 'We reply within minutes during store hours',       color: 'var(--accent-dark)' },
   ];
 
   return (
     <section id="enquire" style={{
-      background: 'var(--cream-warm)',
+      background: '#ffffff',
       padding: 'clamp(72px, 9vw, 130px) clamp(20px, 5vw, 80px)',
       position: 'relative', overflow: 'hidden',
     }}>
 
-      {/* Amber top stripe */}
+      {/* Green top stripe */}
       <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 5,
-        background: 'linear-gradient(to right, var(--amber-dark), var(--amber), var(--saffron), var(--amber), var(--amber-dark))' }} />
+        background: 'linear-gradient(to right, var(--primary-dark), var(--primary), var(--accent), var(--primary), var(--primary-dark))' }} />
 
-      {/* Background warm blobs */}
+      {/* Background fresh green blobs */}
       <div style={{ position: 'absolute', top: '10%', left: '-10%', width: 500, height: 500, borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(245,158,11,0.1) 0%, transparent 70%)', pointerEvents: 'none' }} />
+        background: 'radial-gradient(circle, rgba(21,128,61,0.04) 0%, transparent 70%)', pointerEvents: 'none' }} />
       <div style={{ position: 'absolute', bottom: '5%', right: '-5%', width: 400, height: 400, borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(234,88,12,0.08) 0%, transparent 70%)', pointerEvents: 'none' }} />
+        background: 'radial-gradient(circle, rgba(16,185,129,0.03) 0%, transparent 70%)', pointerEvents: 'none' }} />
 
       <div style={{ position: 'relative', zIndex: 10, maxWidth: 1280, margin: '0 auto' }}>
         <div style={{
@@ -54,7 +54,7 @@ export default function EnquiryForm() {
           {/* Left info */}
           <div className="reveal-left">
             <span className="section-label" style={{ marginBottom: 20, display: 'inline-flex' }}>
-              <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--amber)', display: 'block' }}/>
+              <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--primary)', display: 'block' }}/>
               Get In Touch
             </span>
 
@@ -62,12 +62,12 @@ export default function EnquiryForm() {
               fontFamily: "'Playfair Display', serif",
               fontSize: 'clamp(32px, 4.5vw, 56px)',
               fontWeight: 900,
-              letterSpacing: '-1.5px', color: 'var(--deep-mid)',
+              letterSpacing: '-1.5px', color: 'var(--text-on-light)',
               marginBottom: 22, lineHeight: 1.1, marginTop: 18,
             }}>
               Have a Question?<br />
               <span style={{
-                background: 'linear-gradient(135deg, var(--amber) 0%, var(--saffron) 100%)',
+                background: 'linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%)',
                 WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
                 fontStyle: 'italic',
               }}>
@@ -89,26 +89,26 @@ export default function EnquiryForm() {
                 <div key={item.label} style={{
                   display: 'flex', alignItems: 'flex-start', gap: 18,
                   padding: '18px 22px',
-                  background: 'white',
+                  background: '#ffffff',
                   borderRadius: 18,
-                  border: '1px solid rgba(28,15,2,0.07)',
-                  boxShadow: '0 4px 20px rgba(28,15,2,0.06)',
+                  border: '1px solid rgba(21,128,61,0.08)',
+                  boxShadow: '0 4px 20px rgba(15,47,29,0.03)',
                   transition: 'transform 0.22s ease, box-shadow 0.22s ease',
                   cursor: 'default',
                 }}
-                onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = '0 10px 36px rgba(28,15,2,0.12)' }}
-                onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 4px 20px rgba(28,15,2,0.06)' }}>
+                onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = '0 10px 36px rgba(15,47,29,0.08)' }}
+                onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 4px 20px rgba(15,47,29,0.03)' }}>
                   <div style={{
                     width: 50, height: 50, borderRadius: 14, flexShrink: 0,
-                    background: `${item.color}15`,
-                    border: `2px solid ${item.color}30`,
+                    background: `rgba(21,128,61,0.05)`,
+                    border: `2px solid rgba(21,128,61,0.15)`,
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     fontSize: 24,
                   }}>
                     {item.icon}
                   </div>
                   <div style={{ paddingTop: 3 }}>
-                    <div style={{ color: 'var(--deep-mid)', fontWeight: 800, fontSize: 15, fontFamily: "'Outfit', sans-serif", marginBottom: 4 }}>
+                    <div style={{ color: 'var(--text-on-light)', fontWeight: 800, fontSize: 15, fontFamily: "'Outfit', sans-serif", marginBottom: 4 }}>
                       {item.label}
                     </div>
                     <div style={{ color: 'var(--text-muted-light)', fontSize: 13, fontFamily: "'Inter', sans-serif", fontWeight: 400 }}>
@@ -123,23 +123,23 @@ export default function EnquiryForm() {
           {/* Right form */}
           <div className="reveal-right">
             <div style={{
-              background: 'white',
+              background: '#ffffff',
               borderRadius: 28,
               padding: 'clamp(30px, 4vw, 52px)',
-              boxShadow: '0 28px 100px rgba(28,15,2,0.12)',
-              border: '1px solid rgba(245,158,11,0.15)',
+              boxShadow: '0 28px 100px rgba(15,47,29,0.06)',
+              border: '1px solid rgba(21,128,61,0.12)',
               position: 'relative', overflow: 'hidden',
             }}>
-              {/* Amber top bar */}
+              {/* Green top bar */}
               <div style={{
                 position: 'absolute', top: 0, left: 0, right: 0, height: 5,
-                background: 'linear-gradient(to right, var(--amber), var(--saffron))',
+                background: 'linear-gradient(to right, var(--primary), var(--accent))',
               }} />
 
               <div style={{ marginBottom: 28, paddingTop: 8 }}>
                 <h3 style={{
                   fontFamily: "'Playfair Display', serif",
-                  color: 'var(--deep-mid)', fontWeight: 900, fontSize: 28, marginBottom: 6,
+                  color: 'var(--text-on-light)', fontWeight: 900, fontSize: 28, marginBottom: 6,
                 }}>
                   Send Your Enquiry
                 </h3>
@@ -155,15 +155,16 @@ export default function EnquiryForm() {
                 }}>
                   <div style={{
                     width: 90, height: 90, borderRadius: '50%',
-                    background: 'linear-gradient(135deg, var(--amber) 0%, var(--saffron) 100%)',
+                    background: 'linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%)',
+                    color: 'white',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     marginBottom: 24, fontSize: 42,
-                    boxShadow: '0 16px 48px rgba(245,158,11,0.4)',
+                    boxShadow: '0 16px 48px rgba(21,128,61,0.3)',
                     animation: 'scaleIn 0.5s ease',
                   }}>
                     ✓
                   </div>
-                  <h3 style={{ color: 'var(--deep-mid)', fontSize: 24, fontWeight: 900, marginBottom: 10, fontFamily: "'Playfair Display', serif" }}>
+                  <h3 style={{ color: 'var(--text-on-light)', fontSize: 24, fontWeight: 900, marginBottom: 10, fontFamily: "'Playfair Display', serif" }}>
                     Redirecting to WhatsApp!
                   </h3>
                   <p style={{ color: 'var(--text-muted-light)', fontSize: 14, fontFamily: "'Inter', sans-serif" }}>

@@ -235,14 +235,14 @@ export default function Branches() {
                   <a href={b.mapUrl} target="_blank" rel="noopener noreferrer" style={{
                     display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 7,
                     background: 'transparent',
-                    border: `2px solid ${b.color}40`,
+                    border: `2.5px solid ${b.color}`,
                     color: b.color,
                     fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 13,
                     padding: '10px 14px', borderRadius: 12, textDecoration: 'none',
                     transition: 'all 0.22s ease',
                   }}
-                  onMouseEnter={e => { e.currentTarget.style.background = `${b.color}08`; e.currentTarget.style.borderColor = b.color; e.currentTarget.style.transform = 'translateY(-2px)' }}
-                  onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = `${b.color}40`; e.currentTarget.style.transform = 'translateY(0)' }}>
+                  onMouseEnter={e => { e.currentTarget.style.background = `${b.color}08`; e.currentTarget.style.transform = 'translateY(-2px)' }}
+                  onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.transform = 'translateY(0)' }}>
                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
                     </svg>

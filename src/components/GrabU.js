@@ -114,9 +114,9 @@ export default function GrabU() {
             }}>
               {[
                 { icon: '📍', title: 'Find Your Nearest KA Branch', desc: 'GPS map selector shows all 5 locations instantly.' },
-                { icon: '⚖️', title: 'Order Produce by Weight', desc: '100g to 5kg of fresh vegetables & fruits — auto priced.' },
-                { icon: '⚡', title: '15–30 Min Delivery', desc: 'Packed at KA, delivered to your doorstep fast.' },
-                { icon: '🛍️', title: '167+ Kerala Products', desc: 'Milma dairy, Eastern spices, Nirapara rice & more.' },
+                { icon: '🛵', title: 'Live Order Tracking', desc: 'Follow your delivery in real-time, from the store shelf to your doorstep.' },
+                { icon: '⚡', title: '15–30 Min Delivery', desc: 'Packed at your local KA branch, delivered to your doorstep fast.' },
+                { icon: '🛍️', title: '15,000+ Products', desc: 'Access the complete KA inventory — fresh produce, dairy, staples, and daily essentials.' },
               ].map((f, i) => (
                 <div key={i} style={{ display: 'flex', gap: 14, alignItems: 'flex-start' }}>
                   <div style={{

@@ -20,7 +20,7 @@ function BranchCard({ branch: b, index, activeIndex, total }) {
   return (
     <div style={{
       position: 'sticky',
-      top: `calc(96px + ${index * 18}px)`,
+      top: `calc(var(--sticky-top, 96px) + ${index} * var(--sticky-gap, 18px))`,
       zIndex: index + 1,
       marginBottom: index === total - 1 ? 0 : 24,
       transform: `scale(${scale}) translateY(${stackOffset}px)`,
@@ -42,14 +42,12 @@ function BranchCard({ branch: b, index, activeIndex, total }) {
         {/* Top accent bar */}
         <div style={{ height: 6, background: `linear-gradient(to right, ${b.color}, ${b.color}88)` }} />
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 0, minHeight: 220 }}>
+        <div className="branch-card-grid">
 
           {/* Left: Branch identity */}
-          <div style={{
-            padding: 'clamp(24px, 3vw, 40px)',
+          <div className="branch-card-left" style={{
             background: b.bg,
             borderRight: `1px solid ${b.color}18`,
-            display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 16,
           }}>
             <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between' }}>
               <div style={{
@@ -90,11 +88,7 @@ function BranchCard({ branch: b, index, activeIndex, total }) {
           </div>
 
           {/* Right: Contact details */}
-          <div style={{
-            padding: 'clamp(24px, 3vw, 40px)',
-            display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: 16,
-            background: '#ffffff',
-          }}>
+          <div className="branch-card-right">
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
               {/* Address */}
               <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
@@ -179,12 +173,59 @@ export default function Branches() {
   return (
     <section id="branches" ref={sectionRef} style={{ background: 'var(--cream-warm)', position: 'relative' }}>
       <style>{`
+        :root {
+          --sticky-top: 96px;
+          --sticky-gap: 18px;
+        }
+        @media (max-width: 640px) {
+          :root {
+            --sticky-top: 72px;
+            --sticky-gap: 12px;
+          }
+        }
         .branches-inner { max-width: 860px; margin: 0 auto; padding: clamp(72px, 8vw, 120px) clamp(20px, 5vw, 60px) clamp(48px, 6vw, 80px); }
         .branches-header { text-align: center; margin-bottom: clamp(48px, 6vw, 72px); }
         .branch-stack-container { position: relative; padding-bottom: clamp(48px, 6vw, 80px); }
+        
+        .branch-card-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 0;
+          min-height: 220px;
+        }
+        .branch-card-left {
+          padding: clamp(24px, 3vw, 40px);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 16px;
+          transition: all 0.3s ease;
+        }
+        .branch-card-right {
+          padding: clamp(24px, 3vw, 40px);
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          gap: 16px;
+          background: #ffffff;
+          transition: all 0.3s ease;
+        }
+
         @media (max-width: 640px) {
-          .branch-card-grid { grid-template-columns: 1fr !important; }
-          .branch-card-right { border-top: 1px solid rgba(21, 128, 61, 0.08) !important; border-left: none !important; }
+          .branch-card-grid {
+            grid-template-columns: 1fr !important;
+            min-height: auto !important;
+          }
+          .branch-card-left {
+            border-right: none !important;
+            border-bottom: 1px solid rgba(21, 128, 61, 0.08) !important;
+            padding: 24px 20px !important;
+          }
+          .branch-card-right {
+            border-top: none !important;
+            border-left: none !important;
+            padding: 24px 20px !important;
+          }
         }
       `}</style>
 

@@ -2,11 +2,11 @@
 import Image from 'next/image'
 
 const branches = [
-  { id: 1, name: 'Pookad',   label: 'Main Branch',      phone: '+917594969999', emoji: '🏪' },
-  { id: 2, name: 'Payyoli',  label: 'Beach Road',        phone: '+919061717739', emoji: '🌊' },
-  { id: 3, name: 'Vadakara', label: 'Narayana Nagaram',  phone: '+917356701770', emoji: '🏘️' },
-  { id: 4, name: 'Vadakara', label: 'Thazhe Angadi',     phone: '+919562129612', emoji: '🛒' },
-  { id: 5, name: 'Vadakara', label: 'Sand Banks',         phone: '+917592023211', emoji: '🌴' },
+  { id: 1, name: 'Vadakara', label: 'Narayana Nagaram',  phone: '+917356701770', emoji: '🏘️' },
+  { id: 2, name: 'Vadakara', label: 'Thazhe Angadi',     phone: '+919562129612', emoji: '🛒' },
+  { id: 3, name: 'Vadakara', label: 'Sand Banks',         phone: '+917592023211', emoji: '🌴' },
+  { id: 4, name: 'Payyoli',  label: 'Beach Road',        phone: '+919061717739', emoji: '🌊' },
+  { id: 5, name: 'Pookad',   label: 'Pookad',            phone: '+917594969999', emoji: '🏪' },
 ]
 
 const quickLinks = [

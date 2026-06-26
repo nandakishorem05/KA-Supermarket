@@ -40,7 +40,7 @@ export default function Hero() {
           width: 100%;
           max-width: 1300px;
           margin: 0 auto;
-          padding: 120px 28px 100px;
+          padding: 120px 28px 160px;
         }
         .hero-content {
           max-width: 580px;

@@ -51,7 +51,7 @@ export default function GrabU() {
                 <img
                   src="/ka-logo.jpeg"
                   alt="KA Supermarket"
-                  style={{ width: 56, height: 56, borderRadius: 14, objectFit: 'cover', border: '2px solid rgba(21,128,61,0.15)' }}
+                  style={{ width: 56, height: 56, borderRadius: 14, objectFit: 'contain', background: '#ffffff', padding: 4, border: '2px solid rgba(21,128,61,0.15)' }}
                 />
                 <span style={{
                   fontFamily: "'Outfit', sans-serif",

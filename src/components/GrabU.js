@@ -8,6 +8,43 @@ export default function GrabU() {
       position: 'relative',
       overflow: 'hidden',
     }}>
+      <style>{`
+        .grabu-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 0;
+        }
+        .grabu-info-col {
+          padding: clamp(32px, 4vw, 56px);
+          border-right: 1px solid rgba(21, 128, 61, 0.08);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 28px;
+        }
+        .grabu-features-col {
+          padding: clamp(32px, 4vw, 56px);
+          background: #f9fefb;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+          .grabu-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .grabu-info-col {
+            border-right: none !important;
+            border-bottom: 1px solid rgba(21, 128, 61, 0.08) !important;
+            padding: 32px 20px !important;
+          }
+          .grabu-features-col {
+            padding: 32px 20px !important;
+          }
+        }
+      `}</style>
 
       {/* Subtle top stripe */}
       <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 5,
@@ -34,18 +71,10 @@ export default function GrabU() {
           {/* Green accent top bar */}
           <div style={{ height: 5, background: 'linear-gradient(to right, var(--primary-dark), var(--accent))' }} />
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: 0,
-          }}>
+          <div className="grabu-grid">
 
             {/* Left: Info */}
-            <div style={{
-              padding: 'clamp(32px, 4vw, 56px)',
-              borderRight: '1px solid rgba(21, 128, 61, 0.08)',
-              display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 28,
-            }}>
+            <div className="grabu-info-col">
               {/* Logo row */}
               <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
                 <img
@@ -107,11 +136,7 @@ export default function GrabU() {
             </div>
 
             {/* Right: Features */}
-            <div style={{
-              padding: 'clamp(32px, 4vw, 56px)',
-              background: '#f9fefb',
-              display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 20,
-            }}>
+            <div className="grabu-features-col">
               {[
                 { icon: '📍', title: 'Find Your Nearest KA Branch', desc: 'GPS map selector shows all 5 locations instantly.' },
                 { icon: '🛵', title: 'Live Order Tracking', desc: 'Follow your delivery in real-time, from the store shelf to your doorstep.' },

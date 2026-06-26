@@ -2,11 +2,11 @@
 import { useRef, useEffect, useState } from 'react'
 
 const BRANCHES = [
-  { name: 'Pookad',   tag: 'Main Branch',     address: 'Main Road, Pookad, Kerala',           phone: '+917594969999', displayPhone: '+91 75949 69999', mapUrl: 'https://maps.google.com/?q=Pookad+KA+Supermarket+Kerala',                 hours: '7:00 AM – 10:00 PM', isMain: true,  emoji: '🏪', color: '#15803d', bg: '#f0fdf4' },
-  { name: 'Payyoli',  tag: 'Beach Road',       address: 'Beach Road, Payyoli, Kerala',          phone: '+919061717739', displayPhone: '+91 90617 17739', mapUrl: 'https://maps.google.com/?q=Payyoli+Beach+Road+KA+Supermarket',           hours: '7:00 AM – 10:00 PM', isMain: false, emoji: '🌊', color: '#0369a1', bg: '#f0f9ff' },
-  { name: 'Vadakara', tag: 'Narayana Nagaram', address: 'Narayana Nagaram, Vadakara, Kerala',   phone: '+917356701770', displayPhone: '+91 73567 01770', mapUrl: 'https://maps.google.com/?q=Narayana+Nagaram+Vadakara+KA+Supermarket', hours: '7:00 AM – 10:00 PM', isMain: false, emoji: '🏘️', color: '#7c3aed', bg: '#faf5ff' },
-  { name: 'Vadakara', tag: 'Thazhe Angadi',    address: 'Thazhe Angadi, Vadakara, Kerala',     phone: '+919562129612', displayPhone: '+91 95621 29612', mapUrl: 'https://maps.google.com/?q=Thazhe+Angadi+Vadakara+KA+Supermarket',     hours: '7:00 AM – 10:00 PM', isMain: false, emoji: '🛒', color: '#b45309', bg: '#fffbeb' },
-  { name: 'Vadakara', tag: 'Sand Banks',        address: 'Sand Banks, Vadakara, Kerala',         phone: '+917592023211', displayPhone: '+91 75920 23211', mapUrl: 'https://maps.google.com/?q=Sand+Banks+Vadakara+KA+Supermarket',         hours: '7:00 AM – 10:00 PM', isMain: false, emoji: '🌴', color: '#be185d', bg: '#fdf2f8' },
+  { name: 'Vadakara', tag: 'Narayana Nagaram', address: 'Narayana Nagaram, Vadakara, Kerala',   phone: '+917356701770', displayPhone: '+91 73567 01770', mapUrl: 'https://maps.google.com/?q=Narayana+Nagaram+Vadakara+KA+Supermarket', hours: '7:00 AM – 10:00 PM', emoji: '🏘️', color: '#7c3aed', bg: '#faf5ff' },
+  { name: 'Vadakara', tag: 'Thazhe Angadi',    address: 'Thazhe Angadi, Vadakara, Kerala',     phone: '+919562129612', displayPhone: '+91 95621 29612', mapUrl: 'https://maps.google.com/?q=Thazhe+Angadi+Vadakara+KA+Supermarket',     hours: '7:00 AM – 10:00 PM', emoji: '🛒', color: '#b45309', bg: '#fffbeb' },
+  { name: 'Vadakara', tag: 'Sand Banks',        address: 'Sand Banks, Vadakara, Kerala',         phone: '+917592023211', displayPhone: '+91 75920 23211', mapUrl: 'https://maps.google.com/?q=Sand+Banks+Vadakara+KA+Supermarket',         hours: '7:00 AM – 10:00 PM', emoji: '🌴', color: '#be185d', bg: '#fdf2f8' },
+  { name: 'Payyoli',  tag: 'Beach Road',       address: 'Beach Road, Payyoli, Kerala',          phone: '+919061717739', displayPhone: '+91 90617 17739', mapUrl: 'https://maps.google.com/?q=Payyoli+Beach+Road+KA+Supermarket',           hours: '7:00 AM – 10:00 PM', emoji: '🌊', color: '#0369a1', bg: '#f0f9ff' },
+  { name: 'Pookad',   tag: 'Pookad',           address: 'Main Road, Pookad, Kerala',           phone: '+917594969999', displayPhone: '+91 75949 69999', mapUrl: 'https://maps.google.com/?q=Pookad+KA+Supermarket+Kerala',                 hours: '7:00 AM – 10:00 PM', emoji: '🏪', color: '#15803d', bg: '#f0fdf4' },
 ]
 
 function BranchCard({ branch: b, index, activeIndex, total }) {
@@ -79,19 +79,7 @@ function BranchCard({ branch: b, index, activeIndex, total }) {
                 {b.emoji}
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 6 }}>
-                {b.isMain && (
-                  <span style={{
-                    background: `linear-gradient(135deg, ${b.color}, ${b.color}bb)`,
-                    color: 'white',
-                    fontSize: 9, fontWeight: 900, letterSpacing: 2,
-                    textTransform: 'uppercase',
-                    padding: '4px 12px', borderRadius: 50,
-                    fontFamily: "'Outfit', sans-serif",
-                    boxShadow: `0 4px 12px ${b.color}35`,
-                  }}>
-                    ⭐ Main
-                  </span>
-                )}
+  
                 <span style={{
                   background: 'rgba(21,128,61,0.06)',
                   border: '1px solid rgba(21,128,61,0.15)',

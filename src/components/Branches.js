@@ -382,42 +382,221 @@ export default function Branches() {
           ))}
         </div>
 
-        {/* ── Bottom CTA ── */}
-        <div className="reveal" style={{ textAlign: 'center', marginTop: 'clamp(64px, 8vw, 100px)' }}>
+        {/* ── GrabU Partnership Banner ── */}
+        <div className="reveal" style={{ marginTop: 'clamp(80px, 10vw, 130px)' }}>
+
+          {/* Coming Soon pill */}
+          <div style={{ textAlign: 'center', marginBottom: 40 }}>
+            <span style={{
+              display: 'inline-flex', alignItems: 'center', gap: 10,
+              background: 'linear-gradient(135deg, #15803d08, #10b98108)',
+              border: '2px solid #15803d25',
+              borderRadius: 50, padding: '10px 24px',
+              fontFamily: "'Outfit', sans-serif",
+              fontSize: 11, fontWeight: 900, letterSpacing: 3,
+              textTransform: 'uppercase', color: '#15803d',
+            }}>
+              <span style={{ width: 7, height: 7, borderRadius: '50%', background: '#15803d', display: 'inline-block', animation: 'pulse 2s infinite' }} />
+              Coming Soon
+            </span>
+          </div>
+
+          {/* Main partnership card */}
           <div style={{
-            background: 'linear-gradient(135deg, var(--deep-mid) 0%, var(--deep) 100%)',
-            border: '1px solid rgba(21,128,61,0.2)',
-            borderRadius: 30,
-            padding: 'clamp(40px, 5vw, 72px) clamp(28px, 4vw, 64px)',
-            position: 'relative', overflow: 'hidden',
-            boxShadow: 'var(--shadow-deep)',
+            background: 'linear-gradient(145deg, #0f2d1e 0%, #1a3d28 50%, #0d2318 100%)',
+            borderRadius: 32,
+            overflow: 'hidden',
+            position: 'relative',
+            boxShadow: '0 40px 120px rgba(15,45,30,0.35), 0 8px 32px rgba(0,0,0,0.12)',
+            border: '1px solid rgba(21,128,61,0.25)',
           }}>
-            <div style={{ position: 'absolute', top: '-30%', right: '-5%', width: 400, height: 400, borderRadius: '50%', background: 'rgba(16,185,129,0.06)', pointerEvents: 'none' }} />
-            <div style={{ position: 'relative', zIndex: 2 }}>
-              <div style={{ fontSize: 44, marginBottom: 16 }}>💬</div>
-              <h3 style={{
-                fontFamily: "'Playfair Display', serif",
-                fontWeight: 900, fontSize: 'clamp(26px, 4vw, 44px)',
-                color: 'white', marginBottom: 16, lineHeight: 1.15,
+
+            {/* Decorative blobs */}
+            <div style={{ position: 'absolute', top: '-20%', left: '-10%', width: 500, height: 500, borderRadius: '50%', background: 'radial-gradient(circle, rgba(21,128,61,0.12) 0%, transparent 65%)', pointerEvents: 'none' }} />
+            <div style={{ position: 'absolute', bottom: '-15%', right: '-5%', width: 400, height: 400, borderRadius: '50%', background: 'radial-gradient(circle, rgba(16,185,129,0.08) 0%, transparent 65%)', pointerEvents: 'none' }} />
+            <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.025) 1px, transparent 1px)', backgroundSize: '32px 32px', pointerEvents: 'none' }} />
+
+            {/* Top section: logos + headline */}
+            <div style={{
+              padding: 'clamp(40px, 5vw, 70px) clamp(28px, 5vw, 70px) 0',
+              position: 'relative', zIndex: 2,
+            }}>
+
+              {/* Logo row */}
+              <div style={{
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                gap: 'clamp(20px, 4vw, 48px)', marginBottom: 36, flexWrap: 'wrap',
               }}>
-                Can&apos;t find what you need?
-              </h3>
+                {/* KA logo */}
+                <div style={{
+                  background: 'white',
+                  borderRadius: 20, padding: '14px 20px',
+                  boxShadow: '0 8px 32px rgba(0,0,0,0.2)',
+                  display: 'flex', alignItems: 'center', gap: 12,
+                }}>
+                  <img src="/ka-logo.jpeg" alt="KA Supermarket" style={{ width: 48, height: 48, borderRadius: 10, objectFit: 'cover' }} />
+                  <div>
+                    <div style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 900, fontSize: 15, color: '#0f2d1e', lineHeight: 1.2 }}>KA Supermarket</div>
+                    <div style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400, fontSize: 11, color: '#6b7280', lineHeight: 1.3 }}>Malabar&apos;s Finest</div>
+                  </div>
+                </div>
+
+                {/* × connector */}
+                <div style={{
+                  width: 44, height: 44, borderRadius: '50%',
+                  background: 'rgba(21,128,61,0.15)',
+                  border: '2px solid rgba(21,128,61,0.3)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  fontFamily: "'Outfit', sans-serif", fontWeight: 900, fontSize: 22, color: '#4ade80',
+                }}>×</div>
+
+                {/* GrabU logo */}
+                <div style={{
+                  background: 'white',
+                  borderRadius: 20, padding: '14px 20px',
+                  boxShadow: '0 8px 32px rgba(0,0,0,0.2)',
+                  display: 'flex', alignItems: 'center', gap: 12,
+                }}>
+                  <img src="/App logo.jpeg" alt="GrabU App" style={{ width: 48, height: 48, borderRadius: 10, objectFit: 'cover' }} />
+                  <div>
+                    <div style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 900, fontSize: 15, color: '#0f2d1e', lineHeight: 1.2 }}>GrabU</div>
+                    <div style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400, fontSize: 11, color: '#6b7280', lineHeight: 1.3 }}>Hyperlocal Delivery</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Headline */}
+              <h2 style={{
+                fontFamily: "'Playfair Display', Georgia, serif",
+                fontSize: 'clamp(28px, 4.5vw, 56px)',
+                fontWeight: 900, lineHeight: 1.1,
+                color: 'white', textAlign: 'center',
+                marginBottom: 20, letterSpacing: '-1px',
+              }}>
+                KA Supermarket is joining{' '}
+                <span style={{
+                  background: 'linear-gradient(135deg, #4ade80 0%, #86efac 100%)',
+                  WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
+                  fontStyle: 'italic',
+                }}>
+                  GrabU
+                </span>
+              </h2>
               <p style={{
                 fontFamily: "'Inter', sans-serif",
-                fontSize: 16, color: 'rgba(255,255,255,0.75)',
-                marginBottom: 36, maxWidth: 500, margin: '0 auto 36px',
+                fontSize: 'clamp(14px, 1.5vw, 18px)',
+                color: 'rgba(255,255,255,0.65)',
+                textAlign: 'center', maxWidth: 600, margin: '0 auto 52px',
                 lineHeight: 1.8, fontWeight: 300,
               }}>
-                Message any branch on WhatsApp for instant support. We reply within minutes during store hours.
+                All 5 of our branches will be live on GrabU — Kerala&apos;s hyperlocal on-demand grocery delivery platform.
+                Order fresh produce, daily staples, and more. Delivered to your door in 15–30 minutes.
               </p>
-              <a href="#enquire" className="btn-green" style={{ display: 'inline-flex', fontSize: 16, padding: '16px 44px' }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/>
-                  <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm.029 18.88a9.896 9.896 0 01-4.739-1.21l-.34-.202-3.527.925.943-3.44-.222-.353A9.857 9.857 0 012.12 12.03C2.12 6.562 6.562 2.12 12.03 2.12c2.638 0 5.115 1.028 6.978 2.893a9.815 9.815 0 012.893 6.978c-.002 5.467-4.444 9.889-9.872 9.889z"/>
-                </svg>
-                Send a WhatsApp Enquiry
-              </a>
             </div>
+
+            {/* Middle: workflow image */}
+            <div style={{ position: 'relative', zIndex: 2, padding: '0 clamp(28px, 5vw, 70px)' }}>
+              <div style={{
+                borderRadius: 20, overflow: 'hidden',
+                border: '1px solid rgba(255,255,255,0.08)',
+                boxShadow: '0 20px 60px rgba(0,0,0,0.3)',
+              }}>
+                <img
+                  src="/grabu-delivery-workflow.png"
+                  alt="GrabU delivery workflow — from KA Supermarket shelves to your doorstep"
+                  style={{ width: '100%', display: 'block', maxHeight: 280, objectFit: 'cover' }}
+                />
+              </div>
+            </div>
+
+            {/* Bottom: feature pills + app mockup */}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'clamp(180px, 35%, 320px) 1fr',
+              gap: 0,
+              position: 'relative', zIndex: 2,
+              marginTop: 0,
+            }}>
+              {/* App mockup */}
+              <div style={{
+                display: 'flex', alignItems: 'flex-end', justifyContent: 'center',
+                padding: 'clamp(20px, 3vw, 40px) clamp(20px, 3vw, 40px) 0',
+                overflow: 'hidden',
+              }}>
+                <img
+                  src="/grabu-app-mockup.png"
+                  alt="GrabU customer app showing KA Supermarket products"
+                  style={{
+                    width: '100%', maxWidth: 240,
+                    display: 'block',
+                    borderRadius: '16px 16px 0 0',
+                    boxShadow: '0 -16px 60px rgba(0,0,0,0.4)',
+                    transform: 'translateY(6px)',
+                  }}
+                />
+              </div>
+
+              {/* Features grid */}
+              <div style={{
+                padding: 'clamp(28px, 4vw, 56px) clamp(28px, 4vw, 56px) clamp(28px, 4vw, 56px) clamp(20px, 3vw, 40px)',
+                display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 16,
+              }}>
+                {[
+                  { icon: '📍', title: 'Find Your Nearest Branch', desc: 'Precise GPS map selector shows all 5 KA locations near you instantly.' },
+                  { icon: '⚖️', title: 'Fresh Produce by Weight', desc: 'Order vegetables & fruits in 100g, 250g, 500g, 1kg, 2kg or 5kg — priced automatically.' },
+                  { icon: '⚡', title: '15–30 Min Delivery', desc: 'From KA Supermarket shelves to your doorstep with real-time order tracking.' },
+                  { icon: '🛍️', title: '167+ Kerala Products', desc: 'Eastern spices, Milma dairy, Nirapara rice, Kera oil & more — all stocked at KA.' },
+                ].map((f, i) => (
+                  <div key={i} style={{
+                    display: 'flex', gap: 14, alignItems: 'flex-start',
+                    background: 'rgba(255,255,255,0.04)',
+                    border: '1px solid rgba(255,255,255,0.07)',
+                    borderRadius: 14, padding: '14px 18px',
+                    transition: 'background 0.2s',
+                  }}>
+                    <span style={{ fontSize: 22, flexShrink: 0, marginTop: 2 }}>{f.icon}</span>
+                    <div>
+                      <div style={{
+                        fontFamily: "'Outfit', sans-serif", fontWeight: 800,
+                        fontSize: 14, color: '#d1fae5', marginBottom: 3,
+                      }}>{f.title}</div>
+                      <div style={{
+                        fontFamily: "'Inter', sans-serif", fontWeight: 300,
+                        fontSize: 12, color: 'rgba(255,255,255,0.5)', lineHeight: 1.6,
+                      }}>{f.desc}</div>
+                    </div>
+                  </div>
+                ))}
+
+                {/* Notify me button */}
+                <div style={{ marginTop: 8, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+                  <a href="#enquire" style={{
+                    display: 'inline-flex', alignItems: 'center', gap: 8,
+                    background: 'linear-gradient(135deg, #15803d, #10b981)',
+                    color: 'white',
+                    fontFamily: "'Outfit', sans-serif", fontWeight: 800, fontSize: 14,
+                    padding: '13px 28px', borderRadius: 12, textDecoration: 'none',
+                    boxShadow: '0 8px 28px rgba(21,128,61,0.4)',
+                    transition: 'all 0.22s ease',
+                  }}
+                  onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 14px 40px rgba(21,128,61,0.5)' }}
+                  onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 8px 28px rgba(21,128,61,0.4)' }}>
+                    🔔 Notify Me at Launch
+                  </a>
+                  <div style={{
+                    display: 'inline-flex', alignItems: 'center', gap: 6,
+                    border: '1.5px solid rgba(74,222,128,0.35)',
+                    borderRadius: 12, padding: '12px 20px',
+                    fontFamily: "'Outfit', sans-serif", fontWeight: 600, fontSize: 12,
+                    color: '#86efac',
+                  }}>
+                    <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#4ade80', display: 'inline-block' }} />
+                    Partnership Confirmed
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>

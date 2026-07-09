@@ -24,6 +24,14 @@ export const metadata = {
       'Your trusted neighborhood retail network offering premium household essentials, fresh daily farm produce, and an unmatched choice of groceries across 5 convenient regional branches in Malabar.',
     type: 'website',
     locale: 'en_IN',
+    images: [
+      {
+        url: '/ka-logo.jpeg',
+        width: 800,
+        height: 400,
+        alt: 'KA Supermarket Logo',
+      },
+    ],
   },
 };
 
